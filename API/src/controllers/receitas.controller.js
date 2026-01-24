@@ -1,4 +1,4 @@
-import obterRespostaReceita from '../services/gemini.service'
+import obterRespostaReceita from '../services/gemini.service.js'
 
 export const perguntarReceita = async (req, res) => {
     const { pergunta } = req.body

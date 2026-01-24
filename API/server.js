@@ -1,5 +1,5 @@
 import express from 'express'
-import receitasRoutes from './src/routes/receitas.route'
+import receitasRoutes from './src/routes/receitas.route.js'
 
 const app = express()
 const PORT = 3001
