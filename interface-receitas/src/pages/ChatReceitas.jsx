@@ -1,4 +1,26 @@
+import { useState } from "react";
+import ListaMessagens from "../components/listaMessagens";
+
 const ChatReceitas = () => {
+const [mensagens, setMensagens] = useState([
+  {
+    id: 1,
+    texto: "Olá! Sou seu assistente de receitas. Como posso ajudar você hoje?",
+    rementente: 'bot'
+  },
+  {
+    id: 2,
+    texto: "frango assado",
+    rementente: 'usuario'
+  },
+  {
+    id: 3,
+    texto: 'A Receita de Frango Assado Suculento é uma opção deliciosa e prática para suas refeições! Com um tempero aromático feito de alho, limão e azeite de oliva, este frango fica muito suculento. Ideal para encontros em família e amigos, acompanhado de uma boa macarronada. Aprenda a preparar um Frango Assado que certamente encantará todos os paladares!',
+    rementente: 'bot'
+  }
+])
+
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-purple-500 via-gray-50 to-emerald-50">
       <div className="container mx-auto max-w-4xl">
@@ -8,7 +30,7 @@ const ChatReceitas = () => {
         </header>
 
         <div className="bg-white/70 backdrop-blur-sm rounded-2xl">
-            
+            <ListaMessagens mensagens={mensagens}/>
         </div>
       </div>
     </div>
