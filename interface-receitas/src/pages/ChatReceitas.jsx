@@ -6,17 +6,17 @@ const [mensagens, setMensagens] = useState([
   {
     id: 1,
     texto: "Olá! Sou seu assistente de receitas. Como posso ajudar você hoje?",
-    rementente: 'bot'
+    remetente: 'bot'
   },
   {
     id: 2,
     texto: "frango assado",
-    rementente: 'usuario'
+    remetente: 'usuario'
   },
   {
     id: 3,
     texto: 'A Receita de Frango Assado Suculento é uma opção deliciosa e prática para suas refeições! Com um tempero aromático feito de alho, limão e azeite de oliva, este frango fica muito suculento. Ideal para encontros em família e amigos, acompanhado de uma boa macarronada. Aprenda a preparar um Frango Assado que certamente encantará todos os paladares!',
-    rementente: 'bot'
+    remetente: 'bot'
   }
 ])
 
