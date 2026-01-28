@@ -1,11 +1,11 @@
-
+import Mensagem from "./Mensagem"
 
 const ListaMessagens = ({mensagens}) => {
 
     return (
        <div>
             {mensagens.map(mensagem => (
-                <div key={mensagem.id}>{mensagem.texto}</div>
+                <Mensagem key={mensagem.id} mensagem={mensagem}/>
             ))}
        </div> 
     )
