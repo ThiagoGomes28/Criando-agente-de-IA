@@ -1,26 +1,32 @@
 import { useState } from "react";
 import ListaMessagens from "../components/ListaMessagens";
 import ChatBox from "../components/ChatBox";
+import { api } from '../services/api'
 
 const ChatReceitas = () => {
+
+const [loading, setLoading] = useState(false)
+
 const [mensagens, setMensagens] = useState([
   {
     id: 1,
     texto: "Olá! Sou seu assistente de receitas. Como posso ajudar você hoje?",
     remetente: 'bot'
-  },
-  {
-    id: 2,
-    texto: "frango assado",
-    remetente: 'usuario'
-  },
-  {
-    id: 3,
-    texto: 'A Receita de Frango Assado Suculento é uma opção deliciosa e prática para suas refeições! Com um tempero aromático feito de alho, limão e azeite de oliva, este frango fica muito suculento. Ideal para encontros em família e amigos, acompanhado de uma boa macarronada. Aprenda a preparar um Frango Assado que certamente encantará todos os paladares!',
-    remetente: 'bot'
   }
 ])
 
+  const onEnviarMensagem = async (mensagem) => {
+    try {
+
+      const resposta = await api(mensagem)
+
+      console.log(resposta)
+    } catch(err){
+        console.error(err)
+    }
+
+
+  }
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-purple-200 via-gray-50 to-emerald-50">
@@ -32,7 +38,7 @@ const [mensagens, setMensagens] = useState([
 
         <div className="bg-white/70 backdrop-blur-sm rounded-2xl overflow-hidden shadow-xl h-[500px] border border-gray-100 flex flex-col">
             <ListaMessagens mensagens={mensagens}/>
-            <ChatBox/>
+            <ChatBox onEnviarMensagem={onEnviarMensagem} desabilitado={loading} />
         </div>
       </div>
     </div>
