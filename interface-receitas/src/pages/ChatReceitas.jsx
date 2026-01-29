@@ -40,6 +40,15 @@ const [mensagens, setMensagens] = useState([
 
     } catch(err){
         console.error(err)
+
+      const novaMensagem = {
+      id: Date.now(),
+      texto: "Falha ao enviar, tente novamente",
+      remetente: "bot"
+    }
+
+    setMensagens( prev => [...prev, novaMensagem])
+
     } finally {
         setLoading(false)
     }
