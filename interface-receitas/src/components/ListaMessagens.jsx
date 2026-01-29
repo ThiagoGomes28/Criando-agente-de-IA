@@ -1,4 +1,4 @@
-import { useEffect } from "react"
+import { useEffect, useRef } from "react"
 import Mensagem from "./Mensagem"
 
 const ListaMessagens = ({mensagens, loading}) => {
