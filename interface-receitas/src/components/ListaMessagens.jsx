@@ -1,6 +1,17 @@
+import { useEffect } from "react"
 import Mensagem from "./Mensagem"
 
 const ListaMessagens = ({mensagens, loading}) => {
+
+    const mensagemRef = useRef()
+
+    const scrollBaixo = () => {
+        mensagemRef.current.scrollIntoView({behavior: "smooth"})
+    }
+
+    useEffect(() => {
+        scrollBaixo()
+    }, [mensagens])
 
     return (
        <div className="flex-1 overflow-y-auto p-4 space-y-4">
@@ -19,6 +30,8 @@ const ListaMessagens = ({mensagens, loading}) => {
                     </div>
                 </div>
             )}
+
+            <div ref={mensagemRef}></div>
        </div> 
     )
 }
