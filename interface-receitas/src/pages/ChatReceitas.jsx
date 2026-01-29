@@ -65,7 +65,7 @@ const [mensagens, setMensagens] = useState([
         </header>
 
         <div className="bg-white/70 backdrop-blur-sm rounded-2xl overflow-hidden shadow-xl h-[500px] border border-gray-100 flex flex-col">
-            <ListaMessagens mensagens={mensagens}/>
+            <ListaMessagens mensagens={mensagens} loading={loading} />
             <ChatBox onEnviarMensagem={onEnviarMensagem} desabilitado={loading} />
         </div>
       </div>
