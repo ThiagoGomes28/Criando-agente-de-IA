@@ -1,5 +1,6 @@
 import { useState } from "react";
 import ListaMessagens from "../components/ListaMessagens";
+import ChatBox from "../components/ChatBox";
 
 const ChatReceitas = () => {
 const [mensagens, setMensagens] = useState([
@@ -29,8 +30,9 @@ const [mensagens, setMensagens] = useState([
           <p className="text-gray-600 text-lg">Seu assistente pessoal para receitas deliciosas.</p>
         </header>
 
-        <div className="bg-white/70 backdrop-blur-sm rounded-2xl overflow-hidden shadow-xl h-150 border border-gray-100 flex">
+        <div className="bg-white/70 backdrop-blur-sm rounded-2xl overflow-hidden shadow-xl h-[500px] border border-gray-100 flex flex-col">
             <ListaMessagens mensagens={mensagens}/>
+            <ChatBox/>
         </div>
       </div>
     </div>
