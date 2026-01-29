@@ -16,13 +16,32 @@ const [mensagens, setMensagens] = useState([
 ])
 
   const onEnviarMensagem = async (mensagem) => {
+
+    const novaMensagemUsuario = {
+      id: Date.now(),
+      texto: mensagem,
+      remetente: "usuario"
+    }
+
+    setMensagens( prev => [...prev, novaMensagemUsuario])
+    setLoading(true)
+
     try {
 
       const resposta = await api(mensagem)
 
-      console.log(resposta)
+      const novaMensagemBot = {
+        id: Date.now() + 1,
+        texto: resposta,
+        remetente: "bot"
+      }
+
+      setMensagens( prev => [...prev, novaMensagemBot])
+
     } catch(err){
         console.error(err)
+    } finally {
+        setLoading(false)
     }
 
 
